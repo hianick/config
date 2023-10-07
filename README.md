@@ -10,7 +10,7 @@ update pacman -Syy
 
 genfstab -U /mnt >> /mnt/etc/fstab
 
-pacstrap -i /mnt base base-devel amd-ucode grub efibootmgr dosfstools mtools ntfs-3g os-prober linux-lts linux-lts-headers linux-firmware networkmanager dialog sudo vim alacritty firefox git dmenu xorg xorg-server xorg-xinit xorg-xinput xorg-xrandr dhcpcd dhcpcd-ui man-db neofetch pulseaudio (openrc)
+pacstrap -i /mnt base base-devel amd-ucode grub efibootmgr dosfstools mtools ntfs-3g os-prober linux-lts linux-lts-headers linux-firmware networkmanager dialog sudo vim alacritty firefox git dmenu xorg xorg-server xorg-xinit xorg-xinput xorg-xrandr libx11 libxinerama libxft webkit2gtk dhcpcd dhcpcd-ui man-db neofetch pulseaudio (openrc)
 
 arch-chroot /mnt
 
@@ -45,6 +45,13 @@ grub-install --target=x86_64-efi --bootloader-id=grub_uefi --recheck
 (cp /usr/share/locale/en\@quot/LC_MESSAGES/grub.mo /boot/grub/locale/en.mo)
 grub-mkconfig -o /boot/grub/grub.cfg
 exit
+
+install yay - pacman -S --needed git base-devel && git clone https://aur.archlinux.org/yay.git && cd yay && makepkg -si
+
+install input remapper - yay -S input-remapper-git && sudo systemctl restart input-remapper && sudo systemctl enable input-remapper
+
+install dwm - git clone https://git.suckless.org/dwm
+cd into and "sudo make clean install" change red to 782200 and alacritty terminal
 
 .xinitrc
 xrandr -r 144 &
