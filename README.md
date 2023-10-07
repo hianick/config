@@ -10,7 +10,7 @@ update pacman -Syy
 
 genfstab -U /mnt >> /mnt/etc/fstab
 
-pacstrap -i /mnt base base-devel amd-ucode grub efibootmgr dosfstools mtools ntfs-3g os-prober linux-lts linux-lts-headers linux-firmware networkmanager dialog sudo vim alacritty firefox git dmenu xorg xorg-server xorg-xinit xorg-xinput xorg-xrandr libx11 libxinerama libxft webkit2gtk dhcpcd dhcpcd-ui man-db neofetch pulseaudio (openrc)
+pacstrap -i /mnt base base-devel amd-ucode grub efibootmgr dosfstools mtools ntfs-3g os-prober linux-lts linux-lts-headers linux-firmware networkmanager dialog sudo vim alacritty firefox git dmenu xorg xorg-server xorg-xinit xorg-xinput xorg-xrandr libx11 libxinerama libxft webkit2gtk dhcpcd dhcpcd-ui man-db neofetch pipewire pipewire-pulse (openrc)
 
 arch-chroot /mnt
 
