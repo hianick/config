@@ -10,7 +10,7 @@ update pacman -Syy
 
 genfstab -U /mnt >> /mnt/etc/fstab
 
-pacstrap -i /mnt base base-devel amd-ucode grub efibootmgr dosfstools mtools ntfs-3g os-prober linux-lts linux-lts-headers linux-firmware networkmanager dialog sudo vim alacritty firefox git dmenu xorg xorg-server xorg-xinit xorg-xinput xorg-xrandr libx11 libxinerama libxft webkit2gtk dhcpcd dhcpcd-ui man-db neofetch pipewire pipewire-pulse (openrc)
+pacstrap -i /mnt base base-devel amd-ucode grub efibootmgr dosfstools mtools ntfs-3g os-prober linux-lts linux-lts-headers linux-firmware networkmanager dialog sudo vim alacritty firefox git dmenu xorg xorg-server xorg-xinit xorg-xinput xorg-xrandr libx11 libxinerama libxft webkit2gtk dhcpcd dhcpcd-ui man-db neofetch pipewire pipewire-pulse pavucontrol (openrc)
 
 arch-chroot /mnt
 
@@ -54,6 +54,9 @@ install dwm - git clone https://git.suckless.org/dwm
 cd into and "sudo make clean install" change red to 782200 and alacritty terminal
 
 .xinitrc
+/usr/bin/pipewire &
+/usr/bin/pipewire-pulse &
+/usr/bin/pipewire-media-session &
 xrandr -r 144 &
 systemctl start input-remapper &
 input-remapper-control --command autoload &
