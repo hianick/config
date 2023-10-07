@@ -10,8 +10,7 @@ update pacman -Syy
 
 genfstab -U /mnt >> /mnt/etc/fstab
 
-pacstrap -i /mnt base base-devel amd-ucode grub efibootmgr dosfstools mtools os-prober linux linux-headers linux-hardened linux-hardened-headers linux-lts linux-lts-headers linux-firmware networkmanager dialog sudo vim nano 
-firefox git dmenu noto-fonts xorg-server xorg-xinit man-db (openrc)
+pacstrap -i /mnt base base-devel amd-ucode grub efibootmgr dosfstools mtools ntfs-3g os-prober linux-lts linux-lts-headers linux-firmware networkmanager dialog sudo vim alacritty firefox git dmenu xorg xorg-server xorg-xinit xorg-xinput xorg-xrandr dhcpcd dhcpcd-ui man-db neofetch pulseaudio (openrc)
 
 arch-chroot /mnt
 
@@ -46,3 +45,12 @@ grub-install --target=x86_64-efi --bootloader-id=grub_uefi --recheck
 (cp /usr/share/locale/en\@quot/LC_MESSAGES/grub.mo /boot/grub/locale/en.mo)
 grub-mkconfig -o /boot/grub/grub.cfg
 exit
+
+.xinitrc
+xrandr -r 144 &
+systemctl start input-remapper &
+input-remapper-control --command autoload &
+# xinput set-prop 8 304 0, 1 && xinput set-prop 8 301 -.15 &&
+exec dwm
+
+
