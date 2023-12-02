@@ -1,3 +1,5 @@
+# wpa_supplicant -B -i interface -c <(wpa_passphrase MYSSID passphrase)
+
 partition disk
 
 format partitions
