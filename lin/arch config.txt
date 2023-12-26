@@ -1,3 +1,3 @@
 vim /etc/sudoers or EDITOR=vim visudo
 
-(cp /usr/share/locale/en\@quot/LC_MESSAGES/grub.mo /boot/grub/locale/en.mo)
+fastfetch iwd headers light xorg-xset xorg-xinput man-db vim mpv sof-firmware base base-devel pulseaudio pulsaudio-bluetooth bluez-utils alacritty go rust grub htop openssh tree
